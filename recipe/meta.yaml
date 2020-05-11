@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - preader=PDielec.preader:main
     - pdgui=PDielec.pdgui:main
@@ -23,7 +23,7 @@ requirements:
     - python
   run:
     - python
-    - matplotlib
+    - matplotlib-base
     - numpy
     - scipy
     - pyqt
