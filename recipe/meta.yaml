@@ -1,5 +1,5 @@
 {% set name = "PDielec" %}
-{% set version = "6.3.1" %}
+{% set version = "6.4.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,11 +7,11 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 57c12cb29768dd9b49c7c17e12bf6570fa56a135a824f394a7538f011255f577
+  sha256: 8aa9c8a6c2f20fb8a5462b92040841f5257ea95ec199ec1168feeb982c5630af
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - preader=PDielec.preader:main
     - pdgui=PDielec.pdgui:main
@@ -34,6 +34,14 @@ requirements:
     - openpyxl
     - termcolor
     - imageio
+    - imageio-ffmpeg
+    - ffmpeg
+    - requests
+    - beautifulsoup4
+    - bleach
+    - docutils
+    - psutil
+    - pygments
 
 test:
   imports:
