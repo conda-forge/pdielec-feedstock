@@ -35,6 +35,13 @@ requirements:
     - termcolor
     - imageio
     - imageio-ffmpeg
+    - ffmpeg
+    - requests
+    - beautifulsoup4
+    - bleach
+    - docutils
+    - psutil
+    - pygments
 
 test:
   imports:
