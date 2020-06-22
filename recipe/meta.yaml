@@ -11,9 +11,11 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - preader=PDielec.preader:main
+    - p2cif=PDielec.p2cif:main
+    - pdcompare=PDielec.pdcompare:main
     - pdgui=PDielec.pdgui:main
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -49,6 +51,7 @@ test:
   commands:
     - pip check
     - preader --help
+    - p2cif --help
   requires:
     - pip
 
