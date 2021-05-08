@@ -10,7 +10,7 @@ source:
   sha256: cc0f12b0b798e509dc595b00d7c7cba210a4c73afca90c7983a031d1656a3c3e
 
 build:
-  noarch: python>=3.6
+  noarch: python >=3.6
   number: 0
   entry_points:
     - preader=PDielec.preader:main
@@ -23,7 +23,7 @@ build:
 requirements:
   host:
     - pip
-    - python>=3.6
+    - python >=3.6
   run:
     - python
     - matplotlib-base
