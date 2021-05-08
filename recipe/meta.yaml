@@ -29,6 +29,7 @@ requirements:
     - matplotlib-base
     - numpy
     - scipy
+    - scikit-learn
     - pyqt
     - pyopengl
     - pymiescatt
@@ -37,11 +38,16 @@ requirements:
     - openpyxl
     - termcolor
     - imageio
+    - imageio-ffmpeg
     - ffmpeg
+    - requests
+    - beautifulsoup4
+    - bleach
+    - docutils
     - psutil
+    - pygments
     - dill
     - multiprocess
-    - scikit-learn
 
 test:
   imports:
