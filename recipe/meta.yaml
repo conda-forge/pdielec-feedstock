@@ -1,5 +1,5 @@
 {% set name = "PDielec" %}
-{% set version = "6.4.3" %}
+{% set version = "6.4.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6b0f9b501267463b9526a370c5f88dfca70e6bc7e937fb285a5d1cd421c709a3
+  sha256: cc0f12b0b798e509dc595b00d7c7cba210a4c73afca90c7983a031d1656a3c3e
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - preader=PDielec.preader:main
     - p2cif=PDielec.p2cif:main
