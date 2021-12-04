@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6b0f9b501267463b9526a370c5f88dfca70e6bc7e937fb285a5d1cd421c709a3
+  sha256: ae1482d13e99bf0f0786a23a476cb20243286d9dae750b50cfc7b31c73f2254c
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - preader=PDielec.preader:main
     - p2cif=PDielec.p2cif:main
