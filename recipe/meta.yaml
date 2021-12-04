@@ -15,6 +15,7 @@ build:
   entry_points:
     - preader=PDielec.preader:main
     - p2cif=PDielec.p2cif:main
+    - pickled_reader=PDielec.pickled_reader:main
     - pdcompare=PDielec.pdcompare:main
     - pdgui=PDielec.pdgui:main
     - vibanlysis=PDielec.vibanlysis:main
@@ -23,12 +24,13 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
-    - python
+    - python >=3.6
     - matplotlib-base
     - numpy
     - scipy
+    - scikit-learn
     - pyqt
     - pyopengl
     - pymiescatt
@@ -45,12 +47,13 @@ requirements:
     - docutils
     - psutil
     - pygments
+    - dill
+    - multiprocess
 
 test:
   imports:
     - PDielec
   commands:
-    - pip check
     - preader --help
     - p2cif --help
   requires:
