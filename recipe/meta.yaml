@@ -1,5 +1,5 @@
 {% set name = "PDielec" %}
-{% set version = "6.4.3" %}
+{% set version = "7.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -17,6 +17,7 @@ build:
     - p2cif=PDielec.p2cif:main
     - pdcompare=PDielec.pdcompare:main
     - pdgui=PDielec.pdgui:main
+    - vibanlysis=PDielec.vibanlysis:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
