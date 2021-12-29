@@ -32,7 +32,6 @@ requirements:
     - scikit-learn
     - pyqt
     - pyopengl
-    - pymiescatt
     - xlsxwriter
     - pyyaml
     - openpyxl
@@ -47,7 +46,6 @@ requirements:
     - psutil
     - pygments
     - dill
-    - multiprocess
 
 test:
   imports:
