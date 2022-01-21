@@ -1,5 +1,5 @@
 {% set name = "PDielec" %}
-{% set version = "7.0.1" %}
+{% set version = "7.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ae1482d13e99bf0f0786a23a476cb20243286d9dae750b50cfc7b31c73f2254c
+  sha256: 3954b47326384e683c61c8fb200f6d8f7e0317481c514b3cec6fda979d434b6f
 
 build:
   noarch: python
@@ -18,6 +18,8 @@ build:
     - pickled_reader=PDielec.pickled_reader:main
     - pdcompare=PDielec.pdcompare:main
     - pdgui=PDielec.pdgui:main
+    - pdmake=PDielec.pdmake:main
+    - vibanalysis=PDielec.vibanalysis:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
