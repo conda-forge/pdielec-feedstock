@@ -1,5 +1,5 @@
 {% set name = "PDielec" %}
-{% set version = "7.1.2" %}
+{% set version = "7.2.1" %}
 
 
 package:
@@ -9,7 +9,7 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
 
-  sha256: b989464eb5bdcd5e352f131a3ffe073f8fb314a808ecab6cbb49c02d5ccef32b
+  sha256: 8e87743fe1645e3be2cee48d2660335397d213876994cfdc5570e11dc1317a83
 
 
 build:
