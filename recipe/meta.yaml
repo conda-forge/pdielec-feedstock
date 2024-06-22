@@ -1,4 +1,4 @@
-{% set name = "PDielec" %}
+{% set name = "pdielec" %}
 {% set version = "8.1.1" %}
 
 
