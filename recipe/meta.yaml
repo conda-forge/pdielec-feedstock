@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - preader=PDielec.preader:main
     - p2cif=PDielec.p2cif:main
@@ -36,7 +36,7 @@ requirements:
     - numpy
     - scipy
     - scikit-learn
-    - pyqt
+    - qtpy
     - pyopengl
     - xlsxwriter
     - pyyaml
