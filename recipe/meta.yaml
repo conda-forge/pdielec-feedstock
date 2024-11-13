@@ -32,6 +32,7 @@ requirements:
     - setuptools
   run:
     - python >=3.6
+    - blas =*=openblas
     - matplotlib-base
     - numpy
     - scipy
