@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 3
   entry_points:
     - preader=PDielec.preader:main
     - p2cif=PDielec.p2cif:main
