@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 3
+  number: 4
   entry_points:
     - preader=PDielec.preader:main
     - p2cif=PDielec.p2cif:main
@@ -28,10 +28,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - blas =*=openblas
     - matplotlib-base
     - numpy
@@ -63,6 +63,7 @@ test:
     - p2cif --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/JohnKendrick/PDielec
