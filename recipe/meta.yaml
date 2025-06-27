@@ -1,5 +1,5 @@
 {% set name = "pdielec" %}
-{% set version = "8.2.0" %}
+{% set version = "9.0.0" %}
 
 
 package:
@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 3
+  number: 0
   entry_points:
     - preader=PDielec.preader:main
     - p2cif=PDielec.p2cif:main
@@ -23,6 +23,7 @@ build:
     - pdgui=PDielec.pdgui:main
     - pdmake=PDielec.pdmake:main
     - vibanalysis=PDielec.vibanalysis:main
+    - phonopy-pdielec-born=PDielec.phonopy_pdielec_born:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
