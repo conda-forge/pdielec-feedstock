@@ -1,5 +1,6 @@
 {% set name = "pdielec" %}
 {% set version = "9.0.0" %}
+{% set python_min = "3.7" %}
 
 
 package:
@@ -27,11 +28,11 @@ build:
 
 requirements:
   host:
+    - python {{ python_min }}.*
     - pip
-    - python >=3.6
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - blas =*=openblas
     - matplotlib-base
     - numpy
@@ -54,6 +55,7 @@ requirements:
     - psutil
     - pygments
     - dill
+    - spglib
 
 test:
   imports:
@@ -62,6 +64,7 @@ test:
     - preader --help
     - p2cif --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
