@@ -24,6 +24,7 @@ build:
     - pdgui=PDielec.pdgui:main
     - pdmake=PDielec.pdmake:main
     - vibanalysis=PDielec.vibanalysis:main
+    - phonopy-pdielec-born=PDielec.phonopy_pdielec_born:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -70,7 +71,6 @@ test:
 about:
   home: https://github.com/JohnKendrick/PDielec
   license: MIT
-  license_family: MIT
   license_file: LICENSE.txt
   summary: PDielec package for the calculation of THz and infrared spectra
   doc_url: https://johnkendrick.github.io/PDielec
