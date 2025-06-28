@@ -71,7 +71,6 @@ test:
 about:
   home: https://github.com/JohnKendrick/PDielec
   license: MIT
-  license_file: LICENSE.txt
   summary: PDielec package for the calculation of THz and infrared spectra
   doc_url: https://johnkendrick.github.io/PDielec
   dev_url: https://github.com/JohnKendrick/PDielec
