@@ -1,5 +1,5 @@
 {% set name = "pdielec" %}
-{% set version = "9.0.0" %}
+{% set version = "9.0.1" %}
 {% set python_min = "3.7" %}
 
 
@@ -9,9 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-
-  sha256: 90be38dc57ea0c6804c8e13fa87e1695a29092d8c5bdf30df7942fcfcb16a5fa
-
+  sha256: 46b2ec6e5c06f7242333a4363ee861eba0787b4be507a0bd7ec4412e45c503f5
 
 build:
   noarch: python
