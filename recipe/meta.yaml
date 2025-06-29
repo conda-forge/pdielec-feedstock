@@ -1,5 +1,6 @@
 {% set name = "pdielec" %}
-{% set version = "9.0.0" %}
+{% set version = "9.0.1" %}
+{% set python_min = "3.7" %}
 
 
 package:
@@ -8,9 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-
-  sha256: 4652e3dcdd3c0b07899e06f5e0575d3ea2cf75ff812deca02b903288d68c75ff
-
+  sha256: 46b2ec6e5c06f7242333a4363ee861eba0787b4be507a0bd7ec4412e45c503f5
 
 build:
   noarch: python
@@ -23,15 +22,16 @@ build:
     - pdgui=PDielec.pdgui:main
     - pdmake=PDielec.pdmake:main
     - vibanalysis=PDielec.vibanalysis:main
+    - phonopy-pdielec-born=PDielec.phonopy_pdielec_born:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
+    - python {{ python_min }}.*
     - pip
-    - python >=3.6
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - blas =*=openblas
     - matplotlib-base
     - numpy
@@ -54,6 +54,7 @@ requirements:
     - psutil
     - pygments
     - dill
+    - spglib
 
 test:
   imports:
@@ -62,6 +63,7 @@ test:
     - preader --help
     - p2cif --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
