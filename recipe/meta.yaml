@@ -1,73 +1,69 @@
 {% set name = "pdielec" %}
-{% set version = "9.0.1" %}
-{% set python_min = "3.7" %}
-
+{% set version = "9.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 46b2ec6e5c06f7242333a4363ee861eba0787b4be507a0bd7ec4412e45c503f5
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+
+  sha256: 0f94329ef9cfec2a1666bcb426d4e70fab968653fdf6575800efcb84a8686122
+
 
 build:
   noarch: python
   number: 0
-  entry_points:
-    - preader=PDielec.preader:main
-    - p2cif=PDielec.p2cif:main
-    - pickled_reader=PDielec.pickled_reader:main
-    - pdcompare=PDielec.pdcompare:main
-    - pdgui=PDielec.pdgui:main
-    - pdmake=PDielec.pdmake:main
-    - vibanalysis=PDielec.vibanalysis:main
-    - phonopy-pdielec-born=PDielec.phonopy_pdielec_born:main
   script: {{ PYTHON }} -m pip install . -vv
+  # Conda-forge creates the executable wrappers for these automatically
+  entry_points:
+    - preader = PDielec.preader:main
+    - p2cif = PDielec.p2cif:main
+    - pdcompare = PDielec.pdcompare:main
+    - phonopy-pdielec-born = PDielec.phonopy_pdielec_born:main
+    - aims-pdielec-born = PDielec.aims_pdielec_born:main
+    - pickled_reader = PDielec.pickled_reader:main
+    - vibanalysis = PDielec.vibanalysis:main
+    - pdmake = PDielec.pdmake:main
+    - pdgui = PDielec.pdgui:main
 
 requirements:
   host:
-    - python {{ python_min }}.*
-    - pip
+    - python >=3.8
     - setuptools
+    - pip
   run:
-    - python >={{ python_min }}
-    - blas =*=openblas
-    - matplotlib-base
-    - numpy
+    - python >=3.8
     - scipy
-    - scikit-learn
-    - pyqt
+    - numpy
+    - matplotlib-base
+    - pyqt6            # Maps to PyQt6 in your pyproject.toml
     - qtpy
     - pyopengl
-    - xlsxwriter
     - pyyaml
-    - openpyxl
+    - dill
+    - scikit-learn     # Maps to scikit_learn
+    - spglib
     - termcolor
+    - xlsxwriter       # Maps to XlsxWriter
+    - openpyxl
     - imageio
     - imageio-ffmpeg
-    - ffmpeg
-    - requests
-    - beautifulsoup4
-    - bleach
-    - docutils
     - psutil
-    - pygments
-    - dill
-    - spglib
 
 test:
   imports:
     - PDielec
+    - PDielec.GUI
   commands:
     - preader --help
     - p2cif --help
+    - pdmake --help
   requires:
-    - python {{ python_min }}
     - pip
 
 about:
-  home: https://github.com/JohnKendrick/PDielec
+  home: https://johnkendrick.github.io/PDielec
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
